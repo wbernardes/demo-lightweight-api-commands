@@ -3,9 +3,9 @@ using MediatR;
 
 namespace DemoLightweightApi.Handlers
 {
-    public class PingHandler : IRequestHandler<Ping, string>
+    public class PingHandler : IRequestHandler<Ping, object>
     {
-        public string Handle(Ping message)
+        public object Handle(Ping message)
         {
             return "Pong";
         }

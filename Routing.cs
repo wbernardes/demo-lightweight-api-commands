@@ -21,7 +21,7 @@ namespace DemoLightweightApi
                     var action = context.GetRouteData().Values["action"].ToString();
                     var command = context.ReadAsCommand(action);
                     var mediator = (IMediator)app.ApplicationServices.GetService(typeof(IMediator));
-                    var response = mediator.Send(command);
+                    var response = await mediator.Send(command);
                     await context.Response.WriteJson(response);
                 }
                 catch (Exception ex)
